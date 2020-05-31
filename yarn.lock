@@ -441,6 +441,11 @@ typescript@^3.1.4:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.2.tgz#64e9c8e9be6ea583c54607677dd4680a1cf35db9"
   integrity sha512-q2ktq4n/uLuNNShyayit+DTobV2ApPEo/6so68JaD5ojvc/6GClBipedB9zNWYxRSAlZXAe405Rlijzl6qDiSw==
 
+vscode-nls@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.npm.taobao.org/vscode-nls/download/vscode-nls-4.1.2.tgz?cache=0&sync_timestamp=1584465914180&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvscode-nls%2Fdownload%2Fvscode-nls-4.1.2.tgz#ca8bf8bb82a0987b32801f9fddfdd2fb9fd3c167"
+  integrity sha1-yov4u4KgmHsygB+f3f3S+5/TwWc=
+
 vscode-test@^0.4.1:
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/vscode-test/-/vscode-test-0.4.3.tgz#461ebf25fc4bc93d77d982aed556658a2e2b90b8"

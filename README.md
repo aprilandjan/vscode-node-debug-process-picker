@@ -6,3 +6,6 @@ This extension provides configurable pick-process command while debugging Node.j
 
 - <https://github.com/Microsoft/vscode/issues/50378>
 - <https://github.com/microsoft/vscode/issues/95598>
+- <https://github.com/microsoft/vscode-node-debug>
+- <https://github.com/microsoft/vscode-node-debug2>
+- <https://github.com/microsoft/vscode-node-debug/blob/master/src/node/extension/processPicker.ts>

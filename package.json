@@ -10,14 +10,41 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"onCommand:extension.nodeDebugProcessPicker.pick"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-		"commands": [{
-			"command": "extension.helloWorld",
-			"title": "Hello World"
-		}]
+		"commands": [
+			{
+				"command": "extension.nodeDebugProcessPicker.pick",
+				"title": "Pick Filtered Process: Pick a process to debug"
+			}
+		],
+		"configuration": [
+			{
+				"title": "configurations for node-debug-process-picker",
+				"properties": {
+					"nodeDebugProcessPicker.filter": {
+						"type": "string",
+						"default": "",
+						"description": "Glob pattern to filter available node process when used in vscode 'launch.json' configuration while debugging. For example: \n\n  \"processId\": \"${command:PickFilteredProcess}\""
+					},
+					"nodeDebugProcessPicker.autoAttach": {
+						"type": "boolean",
+						"default": true,
+						"description": "If the picker found only one matched process, attach it immediately, without manual pick-confirm"
+					}
+				}
+			}
+		],
+		"debuggers": [
+			{
+				"type": "node",
+				"variables": {
+					"PickFilteredProcess": "extension.nodeDebugProcessPicker.pick"
+				}
+			}
+		]
 	},
 	"scripts": {
 		"vscode:prepublish": "yarn run compile",
@@ -27,10 +54,13 @@
 		"test": "yarn run compile && node ./node_modules/vscode/bin/test"
 	},
 	"devDependencies": {
-		"typescript": "^3.1.4",
-		"vscode": "^1.1.25",
-		"tslint": "^5.8.0",
+		"@types/mocha": "^2.2.42",
 		"@types/node": "^8.10.25",
-		"@types/mocha": "^2.2.42"
+		"tslint": "^5.8.0",
+		"typescript": "^3.1.4",
+		"vscode": "^1.1.25"
+	},
+	"dependencies": {
+		"vscode-nls": "^4.1.2"
 	}
 }
