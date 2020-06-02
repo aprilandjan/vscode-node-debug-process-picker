@@ -17,17 +17,22 @@
 		"commands": [
 			{
 				"command": "extension.nodeDebugProcessPicker.pick",
-				"title": "Pick Filtered Process: Pick a process to debug"
+				"title": "Pick Filtered Process: Pick the node.js process to debug"
 			}
 		],
 		"configuration": [
 			{
 				"title": "configurations for node-debug-process-picker",
 				"properties": {
-					"nodeDebugProcessPicker.filter": {
+					"nodeDebugProcessPicker.include": {
 						"type": "string",
 						"default": "",
-						"description": "Glob pattern to filter available node process when used in vscode 'launch.json' configuration while debugging. For example: \n\n  \"processId\": \"${command:PickFilteredProcess}\""
+						"description": "Process command name patterns that are included in picker display list"
+					},
+					"nodeDebugProcessPicker.exclude": {
+						"type": "string",
+						"default": "",
+						"description": "Process command name patterns that are excluded in picker display list"
 					},
 					"nodeDebugProcessPicker.autoAttach": {
 						"type": "boolean",
@@ -56,11 +61,13 @@
 	"devDependencies": {
 		"@types/mocha": "^2.2.42",
 		"@types/node": "^8.10.25",
+		"@types/vscode": "^1.45.1",
 		"tslint": "^5.8.0",
 		"typescript": "^3.1.4",
 		"vscode": "^1.1.25"
 	},
 	"dependencies": {
+		"minimatch": "^3.0.4",
 		"vscode-nls": "^4.1.2"
 	}
 }

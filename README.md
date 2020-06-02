@@ -1,6 +1,6 @@
 # vscode-node-debug-process-picker
 
-This extension provides configurable pick-process command while debugging Node.js program in vscode. Currently working in process.
+This extension provides configurable pick-process command `PickFilteredProcess` while debugging Node.js program in vscode. Currently working in process.
 
 ## Usage
 
@@ -12,7 +12,7 @@ However, most of times users have to select the specific one manually because of
 
 This extension simply provide a command to find filtered node processes. The filtering rule can be defined via extension configurations listed below.
 
-So, you can use this command `PickFilteredProcess` to replace `PickProcess` when executing `Attach to Process` debugging in config file `launch.json`, to filter the process you care. For Example:
+So, if you install this extension, you can use the command `PickFilteredProcess` to replace `PickProcess` when executing `Attach to Process` debugging in config file `launch.json`, to filter the process you want to focus. For Example:
 
 ```json
 // ./vscode/launch.json
