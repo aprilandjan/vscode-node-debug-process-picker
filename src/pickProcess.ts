@@ -7,6 +7,7 @@ import * as nls from 'vscode-nls';
 import { basename } from 'path';
 import { getProcesses } from './processTree';
 import { analyseArguments } from './protocolDetection';
+import { getConfig, Config } from './util';
 
 const localize = nls.loadMessageBundle();
 
@@ -24,8 +25,9 @@ interface ProcessItem extends vscode.QuickPickItem {
  * - null: abort launch silently
  */
 export function pickProcess(ports: boolean = true): Promise<string | null> {
+  const config: Config = getConfig();
 
-	return listProcesses(!!ports).then(items => {
+	return listProcesses(!!ports, ).then(items => {
     // TODO: check if only one process was found
 		let options: vscode.QuickPickOptions = {
 			placeHolder: localize('pickNodeProcess', "Pick the node.js process to attach to"),
@@ -47,6 +49,7 @@ function listProcesses(ports: boolean): Promise<ProcessItem[]> {
 	let seq = 0;	// default sort key
 
 	return getProcesses((pid: number, ppid: number, command: string, args: string, date?: number) => {
+    // TODO: check if the process is matched with the user configuration defined pattern
 
 		if (process.platform === 'win32' && command.indexOf('\\??\\') === 0) {
 			// remove leading device specifier
