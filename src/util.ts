@@ -2,23 +2,20 @@ import * as vscode from 'vscode';
 import minimatch from 'minimatch';
 
 export enum ConfigField {
-  INCLUDE = 'nodeDebugProcessPicker.include',
-  EXCLUDE = 'nodeDebugProcessPicker.exclude',
+  MATCH = 'nodeDebugProcessPicker.match',
   AUTO_ATTACH = 'nodeDebugProcessPicker.autoAttach',
 }
 
 /** the extension configurations */
 export interface Config {
-  include: string[] | undefined;
-  exclude: string[] | undefined;
+  match: string[] | undefined;
   autoAttach: boolean | undefined;
 }
 
 /** get extension configurations */
 export function getConfig(): Config {
   return {
-    include: vscode.workspace.getConfiguration().get<string[]>(ConfigField.INCLUDE),
-    exclude: vscode.workspace.getConfiguration().get<string[]>(ConfigField.EXCLUDE),
+    match: vscode.workspace.getConfiguration().get<string[]>(ConfigField.MATCH),
     autoAttach: vscode.workspace.getConfiguration().get<boolean>(ConfigField.AUTO_ATTACH),
   };
 }

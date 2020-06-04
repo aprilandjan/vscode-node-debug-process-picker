@@ -17,7 +17,7 @@
 		"commands": [
 			{
 				"command": "extension.nodeDebugProcessPicker.pick",
-				"title": "Pick Filtered Process: Pick the node.js process to debug"
+				"title": "Pick Matched Process: Pick the node.js process to debug"
 			}
 		],
 		"configuration": [
@@ -46,7 +46,7 @@
 			{
 				"type": "node",
 				"variables": {
-					"PickFilteredProcess": "extension.nodeDebugProcessPicker.pick"
+					"PickMatchedProcess": "extension.nodeDebugProcessPicker.pick"
 				}
 			}
 		]

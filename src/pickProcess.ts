@@ -92,7 +92,7 @@ function listProcesses(ports: boolean): Promise<ProcessItem[]> {
 			}
 		}
 
-    // TODO: apply the glob filter pattern here
+    // TODO: apply the minimatch patterns here
 		if (description && pidOrPort) {
 			items.push({
 				// render data

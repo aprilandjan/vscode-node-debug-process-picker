@@ -1,6 +1,6 @@
 # vscode-node-debug-process-picker
 
-This extension provides configurable pick-process command `PickFilteredProcess` while debugging Node.js program in vscode. Currently working in process.
+This extension provides configurable pick-process command `PickMatchedProcess` while debugging Node.js program in vscode. Currently working in process.
 
 ## Usage
 
@@ -10,9 +10,9 @@ The vscode node debugger provides convenient configurations when try to debug a 
 
 However, most of times users have to select the specific one manually because of the others are possibly just distractions, and there's no configurations to filter the listed processes.
 
-This extension simply provide a command to find filtered node processes. The filtering rule can be defined via extension configurations listed below.
+This extension simply provide a command to find matched node processes. The matching rule can be defined via extension configurations listed below.
 
-So, if you install this extension, you can use the command `PickFilteredProcess` to replace `PickProcess` when executing `Attach to Process` debugging in config file `launch.json`, to filter the process you want to focus. For Example:
+So, if you install this extension, you can use the command `PickMatchedProcess` to replace `PickProcess` when executing `Attach to Process` debugging in config file `launch.json`, to filter the process you want to focus. For Example:
 
 ```json
 // ./vscode/launch.json
@@ -23,7 +23,7 @@ So, if you install this extension, you can use the command `PickFilteredProcess`
       "type": "node",
       "request": "attach",
       "name": "Attach by Process ID",
-      "processId": "${command:PickFilteredProcess}",
+      "processId": "${command:PickMatchedProcess}",
       "skipFiles": ["<node_internals>/**"]
     }
   ]
@@ -45,24 +45,14 @@ When pressing <kbd>F5</kbd> to execute debugging task, the node process which it
 
 The available setting are listed below:
 
-### `nodeDebugProcessPicker.include`
+### `nodeDebugProcessPicker.match`
 
-Glob patterns to test against command string of available processes. The matched result will be included in the picker display list. If this setting is defined valid, the `exclude` setting below will be ignored.
+The [minimatch](https://github.com/isaacs/minimatch) patterns to test against command string of available processes. The matched result will be included in the picker display list.
 
 For example, `*/app.js` will match:
 
 ```
-
-```
-
-### `nodeDebugProcessPicker.exclude`
-
-Glob patterns to test against command string of available processes. The matched result will be excluded from the picker display list. Only works if the `include` setting above is defined valid.
-
-For example:
-
-```
-
+// TODO:
 ```
 
 ### `nodeDebugProcessPicker.autoAttach`
