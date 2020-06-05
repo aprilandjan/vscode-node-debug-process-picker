@@ -24,15 +24,10 @@
 			{
 				"title": "configurations for node-debug-process-picker",
 				"properties": {
-					"nodeDebugProcessPicker.include": {
-						"type": "string",
-						"default": "",
-						"description": "Process command name patterns that are included in picker display list"
-					},
-					"nodeDebugProcessPicker.exclude": {
-						"type": "string",
-						"default": "",
-						"description": "Process command name patterns that are excluded in picker display list"
+					"nodeDebugProcessPicker.match": {
+						"type": "array",
+						"default": [],
+						"description": "Glob match patterns used to test against all available node process command names. The filtered result will be listed in the picker list"
 					},
 					"nodeDebugProcessPicker.autoAttach": {
 						"type": "boolean",
