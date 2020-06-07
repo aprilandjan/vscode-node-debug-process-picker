@@ -20,13 +20,15 @@ export function getConfig(): Config {
   };
 }
 
-/** check if the command string fulfill the config rules */
-export function isMatched(command: string, include: string[] | undefined, exclude: string [] | undefined) {
-  //  if `include` is provided, then `exclude` is ignored
-  if (Array.isArray(include)) {
-    // return include.every((pattern) => minimatch.)
+
+/** generate filter functions from glob patterns */
+export function getFilter(patterns?: string[]) {
+  //  if not provide with valid patterns, return true always
+  if (!Array.isArray(patterns) || patterns.length === 0) {
+    return (cmd: string) => true;
   }
-  // if `exclude` is provided, then test match with it
-  // no configuration, just consider it as matched
-  return true;
+  //  prepare all filters
+  const filters: any[] = patterns.map(pattern => minimatch.filter(pattern));
+  //  if one of the filter is passed, consider it matched.
+  return (cmd: string) => filters.some(filter => filter(cmd));
 }
