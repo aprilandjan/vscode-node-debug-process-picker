@@ -2,13 +2,33 @@
 	"name": "vscode-node-debug-process-picker",
 	"displayName": "vscode-node-debug-process-picker",
 	"description": "Provides configurable pick-process command while debugging Node.js program in vscode.",
+	"keywords": [
+		"vscode",
+		"extension",
+		"debugger",
+		"node",
+		"process-picker"
+	],
 	"version": "1.0.0",
 	"engines": {
 		"vscode": "^1.45.0"
 	},
 	"categories": [
-		"Debuggers"
+		"Debuggers",
+		"Other"
 	],
+	"author": "aprilandjan",
+	"publisher": "aprilandjan",
+	"license": "SEE LICENSE IN LICENSE",
+	"icon": "images/icon.png",
+	"galleryBanner": {
+		"color": "#333333",
+		"theme": "dark"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/aprilandjan/vscode-node-debug-process-picker"
+	},
 	"activationEvents": [
 		"onCommand:extension.nodeDebugProcessPicker.pick"
 	],
