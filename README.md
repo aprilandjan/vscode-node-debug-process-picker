@@ -1,4 +1,4 @@
-# vscode-node-debug-process-picker
+# [vscode-node-debug-process-picker](https://marketplace.visualstudio.com/items?itemName=aprilandjan.vscode-node-debug-process-picker)
 
 This extension provides configurable pick-process command `PickMatchedProcess` while debugging Node.js program in vscode.
 
@@ -10,9 +10,9 @@ The vscode node debugger provides convenient configurations when trying to debug
 
 However, most of times users have to select the specific one manually because of the others are possibly just distractions, and there's no configurations to filter the listed processes.
 
-This extension simply provide a command to find matched node processes. The matching rule can be defined via extension configurations listed below.
+This extension simply provide a command to find matched node processes. The matching rules can be defined via extension configurations listed below.
 
-With this extension, you can use the command `PickMatchedProcess` to replace `PickProcess` when executing `Attach to Process` debugging in config file `launch.json`, to filter the process you want to focus. For Example:
+With this extension, you can use the command `PickMatchedProcess` to replace `PickProcess` when executing `Attach to Process` debugging configured in `launch.json`, to filter the process you want to focus. For Example:
 
 ```json
 // ./vscode/launch.json
@@ -39,7 +39,7 @@ With this extension, you can use the command `PickMatchedProcess` to replace `Pi
 }
 ```
 
-When pressing <kbd>F5</kbd> to execute debugging task, the node process which its command name string matches `**/app.js` will be displayed, makes you focus on your specific program more easily.
+When pressing <kbd>F5</kbd> to execute this debugging task, the node process which its command name string matches `**/app.js` will be displayed, makes you focus on your specific program more easily.
 
 ## Settings
 
