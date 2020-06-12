@@ -1,5 +1,9 @@
 # [vscode-node-debug-process-picker](https://marketplace.visualstudio.com/items?itemName=aprilandjan.vscode-node-debug-process-picker)
 
+[![Build Status](https://dev.azure.com/merlinye/vscode-node-debug-process-picker/_apis/build/status/aprilandjan.vscode-node-debug-process-picker?branchName=master)](https://dev.azure.com/merlinye/vscode-node-debug-process-picker/_build/latest?definitionId=1?branchName=master)
+[![Download Count](https://img.shields.io/visual-studio-marketplace/d/aprilandjan.vscode-node-debug-process-picker)](https://marketplace.visualstudio.com/items?itemName=aprilandjan.vscode-node-debug-process-picker)
+[![Download Count](https://img.shields.io/visual-studio-marketplace/i/aprilandjan.vscode-node-debug-process-picker)](https://marketplace.visualstudio.com/items?itemName=aprilandjan.vscode-node-debug-process-picker)
+
 This extension provides configurable pick-process command `PickMatchedProcess` while debugging Node.js program in vscode.
 
 ## Usage
